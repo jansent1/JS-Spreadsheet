@@ -4,6 +4,12 @@ const range = (start, end) =>
     .fill(start)
     .map((element, index) => element + index);
 
+// Also create a range of letters:
+const charRange = (start, end) =>
+  range(start.charCodeAt(0), end.charCodeAt(0)).map((code) =>
+    String.fromCharCode(code)
+  );
+
 // The global window object represents the browser window (or tab)
 window.onload = () => {
   const container = document.getElementById("container");
