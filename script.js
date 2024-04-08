@@ -36,6 +36,12 @@ const charRange = (start, end) =>
     String.fromCharCode(code)
   );
 
+// Parse and evaluate the input String:
+const evalFormula = (x, cells) => {
+  const idToText = (id) => cells.find((cell) => cell.id === id).value;
+  const rangeRegex = /([A-J])([1-9][0-9]?):([A-J])([1-9][0-9]?)/gi;
+};
+
 // The global window object represents the browser window (or tab)
 window.onload = () => {
   const container = document.getElementById("container");
@@ -55,9 +61,15 @@ window.onload = () => {
       input.type = "text";
       input.id = letter + number;
       input.ariaLabel = letter + number;
+      input.onchange = update;
       container.appendChild(input);
     });
   });
 };
 
-const update = (event) => {};
+const update = (event) => {
+  const element = event.target;
+  const value = element.value.replace(/\s/g, "");
+  if (!value.includes(element.id) && value.startsWith("=")) {
+  }
+};
