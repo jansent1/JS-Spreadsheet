@@ -1,3 +1,12 @@
+// Average function:
+const average = (nums) => sum(nums) / nums.length;
+
+// is odd or even function:
+const isEven = (num) => num % 2 === 0;
+
+// function to calculate the sum:
+const sum = (nums) => nums.reduce((acc, el) => acc + el, 0);
+
 // Function to generate a rang of numbers:
 const range = (start, end) =>
   Array(end - start + 1)
